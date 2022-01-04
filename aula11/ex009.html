@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Nacionalidade</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+    <hr>
+    <p>País de origem:
+    <input type="text" name="txt-origin" id="txt-origin">
+    <input type="button" value="ENVIAR" onclick="enviar_button()">
+    </p>
+    <p id="res">Por favor insira os dados acima e clique em <strong>ENVIAR</strong>.</p>
+
+    <script>
+        function enviar_button(){
+            var txt = window.document.querySelector("p#txt-origin")
+            var result = window.document.querySelector("p#res")
+            var txt_value = String(txt.value)
+
+            //result.innerHTML = `Resultado: ${txt_value}`
+
+            if(txt_value == "Brasil"){
+                result.innerHTML = `Você é Brasileiro!`
+            }
+            if(txt_value === ""){
+                result.innerHTML = `ERRO! Por favor, tente novamente!`
+            }
+            else{
+                result.innerHTML = `Você é estrangeiro!`
+            }
+            
+
+        }
+
+    </script>
+</body>
+</html>
